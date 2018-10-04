@@ -24,8 +24,10 @@ Once you have the folder saved onto your computer, access the working directory 
 
 ##### Example:
 
-`bradytobin@Brady:~$ cd /mnt/c/repos/poketest
-bradytobin@Brady:/mnt/c/repos/poketest$ yarn start`
+```bash
+bradytobin@Brady:~$ cd /mnt/c/repos/poketest
+bradytobin@Brady:/mnt/c/repos/poketest$ yarn start
+```
 
 ## *Built With:*
 
