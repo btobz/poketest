@@ -33,19 +33,59 @@ class App extends Component {
       }));
   }
 
+
+
   render() {
 console.log(this.state.data)
 
     let data = this.state.data;
     let name = data.name;
     let error = this.state.error;
+    let id = data.id;
+    const sprites = this.state.data.sprites;
+    
+    let sprite = null
+    let spriteSrc = null
+    let shinySprite = null
+    let spriteButton = null
+
+    const toggleSprite = () => {
+      if (document.getElementById('sprite1').hidden === false){
+      document.getElementById('sprite1').hidden = true;
+      document.getElementById('sprite2').hidden = false;
+      } else {
+      document.getElementById('sprite2').hidden = true;
+      document.getElementById('sprite1').hidden = false;
+      }
+    }
+
+    if (sprites !== undefined) {
+        spriteSrc = this.state.data.sprites.front_default
+        sprite = <img src={spriteSrc} height="100" width="100"/>
+        shinySprite = <img src={this.state.data.sprites.front_shiny} height="100" width="100"/>
+        spriteButton = <button type="button" onClick={toggleSprite}>Toggle Sprite Color</button>
+    }
+    
+
 
     return (
       <div className = "App-component">
       <div className = "App">
         <Search search = {this.search} />
         <p>{name}</p>
+        <p>{id}</p>
         <p>{error}</p>
+        <p id="sprite1"> {sprite} 
+          <br/>
+          <br/>
+        </p>       
+        <p id="sprite2" hidden = "true">
+          { shinySprite }
+          <br/>
+          Shiny
+        </p>
+        <p>{toggleSprite}</p>
+        <p> {spriteButton} </p>
       </div>
       </div>
     )
