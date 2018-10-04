@@ -6,7 +6,7 @@ This project was developed in order to show progress of my growing understanding
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## *Getting Started:
+## *Getting Started:*
 
 ### Prerequisites:
 
@@ -27,12 +27,12 @@ Once you have the folder saved onto your computer, access the working directory 
 `bradytobin@Brady:~$ cd /mnt/c/repos/poketest
 bradytobin@Brady:/mnt/c/repos/poketest$ yarn start`
 
-## *Built With:
+## *Built With:*
 
 - [React](https://reactjs.org/) - Javascript library for building user interfaces that was used.
 - [Visual Studio Code](https://visualstudio.microsoft.com/) - Editing and debugging software used.
 
-## *Contributing:
+## *Contributing:*
 
 ### GitHub:
 
@@ -44,12 +44,12 @@ After editing, adding, and committing your files, you can push your branch to th
 
 `git push -u origin feature_branch_name`
 
-## *Authors:
+## *Authors:*
 
 ##### Brady Tobin
 - Project for CSC-358: Open Source Development, Professor Leon Tabak, Department of Computer Science, Cornell College, 2018
 
-## *Acknowledgements:
+## *Acknowledgements:*
 
 Code consultants:
 - [Jordan Proby](https://github.com/jjproby)
@@ -60,6 +60,6 @@ Other Group Members:
 - [Nick O'Kefe](https://github.com/theannoyingrobot)
 - [Aaron Standefer](https://github.com/ajs541)
 
-## *License:
+## *License:*
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
