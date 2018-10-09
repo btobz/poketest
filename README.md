@@ -42,7 +42,7 @@ After you edit some portion of this web app, you may request to have your contri
 
 `git add .`
 
-`git commit -b "enter_some_name"
+`git commit -m "enter_some_name"`
 
 `git checkout -b feature_branch_name`
 
