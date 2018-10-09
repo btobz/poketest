@@ -20,13 +20,11 @@ class query extends Component {
     handleInputChange(enter) {
         enter.preventDefault();
         this.props.search(this.state);
-        this.setState({ query: "" });
     }
     
     render () {
         return (
             <div>
-
                 <form onSubmit = {this.handleInputChange}>
                     <input type="text"
                         placeholder="Search 4 pokemans"
