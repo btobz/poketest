@@ -40,6 +40,12 @@ bradytobin@Brady:/mnt/c/repos/poketest$ yarn start
 
 After you edit some portion of this web app, you may request to have your contribution added to the master branch by creating a new branch:
 
+`git init`
+
+`git add .`
+
+`git commit -m "enter_some_name"`
+
 `git checkout -b feature_branch_name`
 
 After editing, adding, and committing your files, you can push your branch to the remote repository:
