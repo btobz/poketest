@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Search from './search';
+import styled from 'styled-components';
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,8 @@ class App extends Component {
     };
 
     this.search = this.search.bind(this);
+    this.toggleForward = this.toggleForward.bind(this);
+    this.toggleBackward = this.toggleBackward.bind(this);
   }
 
   search({query}) {
@@ -49,9 +52,34 @@ class App extends Component {
     }));
   }
 
+  toggleForward() {
+    let searchQuery = Number(this.state.query);
+    let newQuery = null;
+    if (searchQuery === 802) {
+      newQuery = 1;
+    } else {
+      newQuery = Number(this.state.query) + 1;
+    }
+    this.setState({query: newQuery})
+    this.search({query: newQuery})
+  }
+
+  toggleBackward() {
+    let searchQuery = Number(this.state.query);
+    let newQuery = null;
+    if (searchQuery === 1) {
+      newQuery = 802;
+    } else {
+      newQuery = searchQuery - 1;
+    }
+    this.setState({query: newQuery});
+    this.search({query: newQuery})
+  }
+
 render() {
 console.log(this.state.data)
 console.log(this.state.speciesData)
+console.log(this.state.query)
 
     let data = this.state.data;
     let name = data.name;
@@ -60,14 +88,15 @@ console.log(this.state.speciesData)
     const sprites = data.sprites;
     const flavorTexts = this.state.speciesData.flavor_text_entries;
     let evolvesFrom = this.state.speciesData.evolves_from_species;
-    
-    let sprite = null
-    let spriteSrc = null
-    let shinySprite = null
-    let spriteButton = null
-    let flavorText = []
-    let evolveFrom = null
-    let textButton = null
+    let sprite = null;
+    let spriteSrc = null;
+    let shinySprite = null;
+    let spriteButton = null;
+    let flavorText = [];
+    let evolveFrom = null;
+    let textButton = null;
+    let forwardButton = null;
+    let backwardButton = null;
 
     const toggleSprite = () => {
       if (document.getElementById('sprite1').hidden === false){
@@ -87,11 +116,18 @@ console.log(this.state.speciesData)
       }
     }
 
+    const Wrapper = styled.section`
+      padding: 4em;
+      background: papayawhip;
+    `;
+
     if (sprites !== undefined) {
         spriteSrc = this.state.data.sprites.front_default
         sprite = <img src={spriteSrc} height="100" width="100"/>
         shinySprite = <img src={this.state.data.sprites.front_shiny} height="100" width="100"/>
         spriteButton = <button type="button" onClick={toggleSprite}>Toggle Sprite Color</button>
+        forwardButton = <button type="button" onClick={this.toggleForward}>Next pokeman</button>
+        backwardButton = <button type="button" onClick={this.toggleBackward}>Previous pokeman</button>
     }
 
     if (flavorTexts !== undefined) {
@@ -110,32 +146,37 @@ console.log(this.state.speciesData)
 
     return (
       <div className = "App-component">
-      <div className = "App">
-        <Search search = {this.search} />
-        <p>{name}</p>
-        <p>{id}</p>
-        <p>{error}</p>
-        <p id="sprite1"> {sprite} 
-          <br/>
-          <br/>
-        </p>       
-        <p id="sprite2" hidden = "true">
-          { shinySprite }
-          <br/>
-          Shiny
-        </p>
-        <p> {toggleSprite} </p>
-        <p> {spriteButton} </p>
-        {
-        evolveFrom
-        ? <p> Evolves from: {evolveFrom} </p>
-        : null
-        }
-        <p> {textButton} </p>
-        <p id="flavatext" hidden = "true">
-        {flavorText}
-        </p>
-      </div>
+        <div className = "App">
+          <div className = "App-search">
+            <Search search = {this.search} />
+          </div>
+          <Wrapper>
+            <p>{name}</p>
+            <p>{id}</p>
+            <p>{error}</p>
+            <p id="sprite1"> {sprite} 
+              <br/>
+              <br/>
+            </p>       
+            <p id="sprite2" hidden = "true">
+              { shinySprite }
+              <br/>
+              Shiny
+            </p>
+            <p> {toggleSprite} </p>
+            <p> {spriteButton} </p>
+            <p> {backwardButton} {forwardButton} </p>
+            {
+            evolveFrom
+            ? <p> Evolves from: {evolveFrom} </p>
+            : null
+            }
+            <p> {textButton} </p>
+            <p id="flavatext" hidden = "true">
+            {flavorText}
+            </p>
+          </Wrapper>
+        </div>
       </div>
     )
   }
