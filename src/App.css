@@ -30,6 +30,14 @@
   color: white;
 }
 
+.App-descrip {
+  text-align: center;
+  margin: 0 auto;
+  min-width: 600px;
+  max-width: 600px;
+  color: white;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
