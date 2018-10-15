@@ -20,6 +20,7 @@ class query extends Component {
     handleInputChange(enter) {
         enter.preventDefault();
         this.state.query = this.state.query.toLowerCase();
+        this.state.query = this.state.query.replace(" ", "-");
         this.props.search(this.state);
     }
     
