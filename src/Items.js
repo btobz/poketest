@@ -52,19 +52,19 @@ class Items extends Component {
   }
 
   toggleForward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 847) {
       newQuery = 1;
     } else {
-      newQuery = Number(this.state.query) + 1;
+      newQuery = Number(this.state.data.id) + 1;
     }
     this.setState({query: newQuery})
     this.search({query: newQuery})
   }
 
   toggleBackward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 1) {
       newQuery = 847;
