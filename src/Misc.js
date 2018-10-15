@@ -5,8 +5,8 @@ class Misc extends Component {
     return (
       <div>
         <h2>Have Questions?</h2>
-        <p>The easiest thing to do is ask us on
-        our <a href="http://www.sometimesredsometimesblue.com/">website</a>.
+        <p>The easiest way to reach me is to email me at bradypoketest@gmail.com or visit
+          my <a href="https://github.com/btobz"> github</a>.
         </p>
       </div>
     );

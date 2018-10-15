@@ -18,8 +18,8 @@ class Main extends Component {
             <ul className="header">
                 <li><NavLink exact to="/"> Home </NavLink></li>
                 <li><NavLink to="/pokemans"> Pokémon </NavLink></li>
-                <li><NavLink to="/misc"> Misc </NavLink></li>
                 <li><NavLink to="/items"> Items </NavLink></li>
+                <li><NavLink to="/misc"> Contact </NavLink></li>
             </ul>
             <div className="content">
                 <Route exact path="/" component={Home}/>

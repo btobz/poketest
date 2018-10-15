@@ -27,7 +27,7 @@ class query extends Component {
             <div>
                 <form onSubmit = {this.handleInputChange}>
                     <input type="text"
-                        placeholder="Search for Pokémon"
+                        placeholder="Search for Items"
                         ref={input => this.search = input}
                         onChange={this.updatequery}/>
                         <p>{this.state.search}</p>

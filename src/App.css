@@ -20,6 +20,15 @@
   background-size: cover;
 }
 
+.App-text {
+  color: white;
+}
+
+.App-flavor {
+  text-align: left;
+  color: white;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
