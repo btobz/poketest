@@ -2,7 +2,7 @@ body {
   background-color: firebrick ;
   padding: 20px;
   margin: 0;
-  font-size: 12px;
+  font-size: 15px;
   -webkit-font-smoothing: none;
   font-family: 'pokemon-font', monospace;
 }
@@ -34,5 +34,5 @@ ul.header li a {
   margin-bottom: 10px;
 }
 .active {
-  background-color: #0099FF;
+  background-color: darkgrey;
 }

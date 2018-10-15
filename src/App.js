@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import Search from './search';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const Wrapper = styled.section`
+padding: 2em;
+background: firebrick;
+`;
+
+const Button = styled.button`
+background: palevioletred;
+border-radius: 3px;
+border: 2px solid white;
+color: white;
+margin: 0 1em;
+padding: 0.25em 1em;
+`;
+
 
 class App extends Component {
   constructor() {
@@ -116,18 +131,13 @@ console.log(this.state.query)
       }
     }
 
-    const Wrapper = styled.section`
-      padding: 4em;
-      background: papayawhip;
-    `;
-
     if (sprites !== undefined) {
         spriteSrc = this.state.data.sprites.front_default
-        sprite = <img src={spriteSrc} height="100" width="100"/>
-        shinySprite = <img src={this.state.data.sprites.front_shiny} height="100" width="100"/>
-        spriteButton = <button type="button" onClick={toggleSprite}>Toggle Sprite Color</button>
-        forwardButton = <button type="button" onClick={this.toggleForward}>Next pokeman</button>
-        backwardButton = <button type="button" onClick={this.toggleBackward}>Previous pokeman</button>
+        sprite = <img src={spriteSrc} height="125" width="125"/>
+        shinySprite = <img src={this.state.data.sprites.front_shiny} height="125" width="125"/>
+        spriteButton = <Button type="button" onClick={toggleSprite}>Toggle Sprite Color</Button>
+        forwardButton = <Button type="button" onClick={this.toggleForward}>Next pokémon</Button>
+        backwardButton = <Button type="button" onClick={this.toggleBackward}>Previous pokémon</Button>
     }
 
     if (flavorTexts !== undefined) {
@@ -138,7 +148,7 @@ console.log(this.state.query)
           )
         }
       })
-      textButton = <button type="button" onClick={toggleText}>Flavor Text</button>
+      textButton = <Button type="button" onClick={toggleText}>Flavor Text</Button>
         if (evolvesFrom !== null) {
           evolveFrom = this.state.speciesData.evolves_from_species.name
         }
@@ -150,32 +160,44 @@ console.log(this.state.query)
           <div className = "App-search">
             <Search search = {this.search} />
           </div>
-          <Wrapper>
-            <p>{name}</p>
-            <p>{id}</p>
-            <p>{error}</p>
-            <p id="sprite1"> {sprite} 
-              <br/>
-              <br/>
-            </p>       
-            <p id="sprite2" hidden = "true">
-              { shinySprite }
-              <br/>
-              Shiny
-            </p>
-            <p> {toggleSprite} </p>
-            <p> {spriteButton} </p>
-            <p> {backwardButton} {forwardButton} </p>
             {
-            evolveFrom
-            ? <p> Evolves from: {evolveFrom} </p>
-            : null
+              (name) 
+              ? (
+                  <Wrapper>
+                    <div className = "App-text">
+                      <p>{name}</p>
+                      <p>{id}</p>
+                    </div>
+                    <p id="sprite1"> {sprite} 
+                      <br/>
+                      <br/>
+                    </p>       
+                    <div className = "App-text">
+                      <p id="sprite2" hidden = "true">
+                        { shinySprite }
+                        <br/>
+                        Shiny
+                      </p>
+                    </div>
+                    <p> {toggleSprite} </p>
+                    <p> {spriteButton} </p>
+                    <p> {backwardButton} {forwardButton} </p>
+                    <div className = "App-text">
+                      {
+                        evolveFrom
+                        ? <p> Evolves from: {evolveFrom} </p>
+                        : null
+                      }
+                    </div>
+                    <p> {textButton} </p>
+                    <div className = "App-flavor">
+                      <p id="flavatext" hidden = "true">
+                      {flavorText}
+                      </p>
+                    </div>
+                  </Wrapper>
+               ) : <p>{error}</p>
             }
-            <p> {textButton} </p>
-            <p id="flavatext" hidden = "true">
-            {flavorText}
-            </p>
-          </Wrapper>
         </div>
       </div>
     )
