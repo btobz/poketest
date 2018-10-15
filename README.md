@@ -59,13 +59,11 @@ After editing, adding, and committing your files, you can push your branch to th
 
 ## *Acknowledgements:*
 
-Code consultants:
+Group Members and Code consultants:
 - [Jordan Proby](https://github.com/jjproby)
 - [Nicholas Adamou](https://github.com/nicholasadamou)
-
-Other Group Members:
+- [Nick O'Keefe](https://github.com/theannoyingrobot)
 - [Conor Burrows](https://github.com/cgburrows)
-- [Nick O'Kefe](https://github.com/theannoyingrobot)
 - [Aaron Standefer](https://github.com/ajs541)
 
 ## *License:*
