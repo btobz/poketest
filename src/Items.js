@@ -107,8 +107,12 @@ console.log(this.state.query)
                     <div className = "App-text">
                       <p> {this.state.data.name} </p>
                       <p> Item No. {this.state.data.id} </p>
-                      <p> {effect} </p>
                       <p> Cost: {this.state.data.cost} </p>
+                    </div>
+                    <div className = "App-descrip">
+                      <p> {effect} </p>
+                    </div>
+                    <div className = "App-text">
                       {sprite}
                       <p> {backwardButton} {forwardButton} </p>
                       {
